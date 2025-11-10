@@ -16,3 +16,16 @@ def number_char(file_contents):
       number_of_characters[char] += 1
   
   return number_of_characters
+
+def sort_on(number_of_characters):
+  return number_of_characters["num"]
+
+def sorted_list(number_of_characters):
+  result = []
+  for char, count in number_of_characters.items():
+    if not char.isalpha(): 
+      continue
+    result.append({"char": char, "num": count})
+
+  result.sort(reverse=True, key=sort_on)
+  return result 
